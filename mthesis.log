@@ -1,0 +1,40 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=latex 2021.1.7)  14 JAN 2021 16:52
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**mthesis.tex
+(./mthesis.tex
+LaTeX2e <2020-10-01> patch level 3
+L3 programming layer <2020-12-07> xparse <2020-03-03>
+(/usr/local/texlive/2020/texmf-dist/tex/platex/jsclasses/jsbook.cls
+
+! LaTeX Error: This file needs format `pLaTeX2e'
+               but this is `LaTeX2e'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \NeedsTeXFormat{pLaTeX2e}
+                              
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.14 \NeedsTeXFormat{pLaTeX2e}
+                              
+The current input file will not be processed further,
+because it was written for some other flavor of TeX.
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ 
+Here is how much of TeX's memory you used:
+ 27 strings out of 481259
+ 825 string characters out of 5915568
+ 264489 words of memory out of 5000000
+ 17055 multiletter control sequences out of 15000+600000
+ 403430 words of font info for 27 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 38i,0n,46p,79b,14s stack positions out of 5000i,500n,10000p,200000b,80000s
+No pages of output.
