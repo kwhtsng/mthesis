@@ -1,0 +1,91 @@
+%% 余白，文字数，行数指定（正しく動いているかは謎）%%%%%
+\setlength{\textwidth}{35zw}
+\setlength{\textheight}{32\baselineskip}
+\setlength{\oddsidemargin}{38truemm}
+\addtolength{\oddsidemargin}{-1truein}
+
+%% デフォルトだと章，節の文字がでかすぎるので調整（冗長かも） %%%%%
+\makeatletter
+
+% 章 
+\def\@makechapterhead#1{\hbox{}%
+  \vskip1\Cvs
+  {\parindent\z@
+   \raggedright
+   \normalfont\Large\sffamily\gtfamily
+   \leavevmode
+   \ifnum \c@secnumdepth >\m@ne
+     \setlength\@tempdima{\linewidth}%
+    \if@mainmatter
+     \setbox\z@\hbox{\@chapapp\thechapter\@chappos\hskip1zw}%
+     \addtolength\@tempdima{-\wd\z@}%
+     \unhbox\z@\nobreak
+    \fi
+     \vtop{\hsize\@tempdima#1}%
+   \else
+     #1\relax
+   \fi}\nobreak\vskip1\Cvs}
+%
+\def\@makeschapterhead#1{\hbox{}%
+  \vskip1\Cvs
+  {\parindent\z@
+   \raggedright
+   \normalfont\Large\sffamily\gtfamily
+   \leavevmode
+   \setlength\@tempdima{\linewidth}%
+   \vtop{\hsize\@tempdima#1}}\vskip1\Cvs}
+
+% 節
+\renewcommand{\section}{\@startsection{section}
+  {1}
+  {\z@}
+  {1.5\Cvs \@plus.5\Cvs \@minus.2\Cvs}
+  {.5\Cvs \@plus.3\Cvs} 
+  {\normalfont\large\sffamily\gtfamily}}
+
+\makeatother
+
+%% 目次に subsubsection まで表示させる %%%%%
+\setcounter{tocdepth}{2}
+
+%% subsubsection まで番号をつける %%%%%
+\setcounter{secnumdepth}{3}	
+
+%% タイトルページ %%%%%
+\makeatletter
+\def\studentid#1{\def\@studentid{#1}}
+\renewcommand{\maketitle}[1]
+{
+  \begin{titlepage}
+    {\Large
+      \begin{flushleft}
+        \if#1m
+        修\hspace{1truecm}士\hspace{1truecm}論\hspace{1truecm}文
+        \else
+        論\hspace{1truecm}文\hspace{1truecm}要\hspace{1truecm}旨
+        \fi
+      \end{flushleft}
+    }
+    \vspace{4truecm}
+    {\LARGE
+      \begin{center}
+        \@title
+      \end{center}
+    }
+    \vspace{5truecm}
+    {\large
+      \begin{center}
+        \hspace{7cm}\@date\hspace{1truecm}修了\\
+      \end{center}
+      \vspace{5truemm}
+      \begin{flushright}
+        \begin{tabular}{rr}
+          学籍番号 & \@studentid\\
+          氏　　名 & \@author\\
+        \end{tabular}
+      \end{flushright}
+    }
+  \end{titlepage}
+} 
+\makeatother
+%% タイトルページ終わり %%%%%

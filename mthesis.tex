@@ -1,0 +1,55 @@
+%% 経情修論用フォーマット
+\documentclass[a4paper, 12pt, report]{jsbook}
+
+% パッケージ読み込み
+% 画像読み込みのパッケージ等必要なものを個人で選択
+\usepackage{mthesis}
+
+\begin{document}
+  % 要旨表紙
+  \title{題目}
+  \date{令和n年度}
+  \studentid{20XXMYYY}
+  \author{氏 名}
+  \maketitle{}
+  % 要旨本文
+  \chapter*{要旨}
+  ここに要旨を書く（タイトルとあわせて3ページくらい）
+
+  % 論文表紙
+  \maketitle{m}
+
+  % 前文
+  \frontmatter
+
+  % 表紙
+  \tableofcontents
+
+  % 目次
+  \tableofcontents
+
+  % 本文
+  \mainmatter
+  \chapter{hogehoge}
+  hogehoge
+
+  \section{hogehoge}
+  hogehoge
+  
+  \subsection{hogehoge}
+  hogehoge
+  
+  \subsubsection{hogehogehoge}
+  hogehoge
+
+  \backmatter
+  % 謝辞
+  \chapter{謝辞}
+  ありがとうございました．
+
+  % 参考文献
+  \begin{thebibliography}{}
+    \bibitem{hogehoge} hogehoge
+  \end{thebibliography}
+
+\end{document}
